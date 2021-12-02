@@ -1,0 +1,4 @@
+In compat.py, time.clock is being used even though it may not be supported.
+Fix: change line 263 and 265 to try: and except:
+
+This fix allows python3 to run without problems.

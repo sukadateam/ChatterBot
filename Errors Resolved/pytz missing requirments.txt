@@ -1,0 +1,4 @@
+pytz is supposed to be checked and installed before running. Though that is not the case.
+The program will still attempt to run without it. Evidence: requirements.txt /root/
+
+Further testing is required.

@@ -1,0 +1,15 @@
+3. AttributeError: module 'collections' has no attribute 'Hashable'.
+Fix to this problem:
+	in constructor.py change lines 126-128 from:
+		if not isinstance(key, collections.Hashable):
+			raise ConstructorError("while constructing a mapping", node.start_mark,
+                        	"found unhashable key", key_node.start_mark)
+  	to:
+      		try:
+          		if not isinstance(key, collections.Hashable):
+         			raise ConstructorError("while constructing a mapping", node.start_mark,
+                            		"found unhashable key", key_node.start_mark)
+      		except:
+          		pass
+
+Fixes the problem. No issues recorded after. 
